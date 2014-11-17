@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TestProject</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <integer name="grid_width">16</integer>
+    <integer name="grid_height">16</integer>
+
+    <color name="grid_block_colour">#FE2EF7</color>
+    <integer name="grid_block_stroke">10</integer>
+    <color name="grid_block_line_colour">#CC66FF</color>
+
+    <integer name="debug">1</integer>
+
+    <integer name="left">1</integer>
+    <integer name="up">2</integer>
+    <integer name="down">3</integer>
+    <integer name="right">4</integer>
+
+    <integer name="player">1</integer>
+    <integer name="enemy">2</integer>
+
+    <integer name="state_dead">2</integer>
+    <integer name="state_alive">1</integer>
+
+    <integer name="default_tank_hp">100</integer>
+</resources>
