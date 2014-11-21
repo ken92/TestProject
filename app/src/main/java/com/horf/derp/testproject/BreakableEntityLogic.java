@@ -10,11 +10,11 @@ public class BreakableEntityLogic extends ConcreteMapEntityLogic {
     private int HP=R.integer.default_tank_hp;
     private int state=ALIVE;
 
-    public BreakableEntityLogic(int x, int y) {
-        super(x, y);
+    public BreakableEntityLogic(int x, int y, MapEntityGraphics graphics) {
+        super(x, y, graphics);
     }
-    public BreakableEntityLogic(int x, int y, int hp) {
-        super(x, y);
+    public BreakableEntityLogic(int x, int y, int hp, MapEntityGraphics graphics) {
+        super(x, y, graphics);
         HP=hp;
     }
 

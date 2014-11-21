@@ -1,5 +1,7 @@
 package com.horf.derp.testproject;
 
+import android.graphics.Canvas;
+
 /**
  * Created by Eridan on 11/15/2014.
  */
@@ -9,12 +11,14 @@ public class ConcreteMapEntityLogic implements MapEntityLogic {
     private static final int LEFT=R.integer.left;
     private static final int RIGHT=R.integer.right;
 
+    private MapEntityGraphics graphics;
     private int x, y;
     private int direction=UP;
 
-    public ConcreteMapEntityLogic(int x, int y) {
+    public ConcreteMapEntityLogic(int x, int y, MapEntityGraphics graphics) {
         setX(x);
         setY(y);
+        this.graphics=graphics;
     }
 
     @Override
@@ -41,6 +45,11 @@ public class ConcreteMapEntityLogic implements MapEntityLogic {
     public int getDirection() {return direction;}
     public void setDirection(int direction) {
         if(direction==UP || direction==LEFT || direction==RIGHT || direction==DOWN)
-            this.direction=direction;
+            this.direction = direction;
     }
+
+    public void draw(Canvas canvas, int x, int y) {
+        graphics.draw(canvas, x, y);
+    }
+    public MapEntityGraphics getGraphics() { return graphics; }
 }

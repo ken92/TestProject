@@ -56,14 +56,24 @@ public class GridBlock {
     public void setBlockNumber(int b) { blockNumber=b; }
     public void setHeight(int h) { height=h; }
     public void setWidth(int w) { width=w; }
-    public void setX(int xx) { x=xx; }
-    public void setY(int yy) { y=yy; }
+    public void setX(int x) { this.x=x; }
+    public void setY(int y) { this.y=y; }
     public void setObject(MapEntityGraphics o) {
         object=o;
-        if(o!=null) {
+        /*if(o!=null) {
+            //object.setX(gridPositionX);
+            //object.setY(gridPositionY);
+        }*/
+    }
+    public void setObject(MapEntityLogic o) {
+        object=o.getGraphics();
+        /*if(o!=null) {
             object.setX(gridPositionX);
             object.setY(gridPositionY);
-        }
+        }*/
+    }
+    public void clearObject() {
+        object=null;
     }
 
     public int getBlockHeight() { return height; }

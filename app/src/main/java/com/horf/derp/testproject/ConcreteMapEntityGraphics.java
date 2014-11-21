@@ -16,7 +16,7 @@ public class ConcreteMapEntityGraphics implements MapEntityGraphics {
     private Bitmap image;
     private int width=50;
     private int height=50;
-    private int x,y;
+    //private int x,y;
 
     public ConcreteMapEntityGraphics(Context context, int path) {
         this.context = context;
@@ -87,12 +87,12 @@ public class ConcreteMapEntityGraphics implements MapEntityGraphics {
         //return Bitmap.createScaledBitmap(image, newWidth, newHeight, true);
     }
 
-    public void setX(int x) { this.x=x;return; }
+    /*public void setX(int x) { this.x=x;return; }
     public void setY(int y) { this.y=y; }
     public int getX() { return x; }
     public int getY() { return y; }
     public void setCoordinates(int x, int y) {
         setX(x);
         setY(y);
-    }
+    }*/
 }

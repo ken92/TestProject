@@ -50,6 +50,7 @@ public class CanvasGrid extends SurfaceView {
         //theGrid[0][0].setBlockNumber(0);
         //Log.d(LOG_TAG, "New block at (" + blockX + "," + blockY + ")");
 
+
         thread = new CanvasThread(this, theGrid, gridWidth, gridHeight);
 
 
@@ -80,6 +81,11 @@ public class CanvasGrid extends SurfaceView {
             public void surfaceCreated(SurfaceHolder holder) {
                 thread.setRunning(true);
                 thread.start();
+
+                //for testing
+                /*Canvas c = holder.lockCanvas(null);
+                draw(c);
+                holder.unlockCanvasAndPost(c);*/
             }
 
             @Override
@@ -89,6 +95,12 @@ public class CanvasGrid extends SurfaceView {
         });
         ready=1;
     }
+
+    //for testing
+    /*public void draw(Canvas canvas) {
+        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.kangoo);
+        canvas.drawBitmap(bmp,20,20,null);
+    }*/
 
     public int getReadyState() {
         return ready;
@@ -102,7 +114,7 @@ public class CanvasGrid extends SurfaceView {
         //Log.i(LOG_TAG, "fromX: "+fromX+"  fromY: "+fromY+"  toX: "+toX+"  toY: "+toY);
         if(theGrid[fromX][fromY].getObject()==null || theGrid[toX][toY].getObject()!=null) return;
         theGrid[toX][toY].setObject(theGrid[fromX][fromY].getObject());
-        theGrid[fromX][fromY].setObject(null);
+        theGrid[fromX][fromY].clearObject();
     }
 
     public void resumeThread() {

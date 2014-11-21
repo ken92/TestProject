@@ -21,8 +21,6 @@ public class TankGraphics extends ConcreteMapEntityGraphics {
     private static int imageLeft;
     private static int imageRight;
 
-    private int x, y;
-
     private final static String LOG_TAG="TankGraphics";
 
     public TankGraphics(Context context, int playerOrEnemy) {
