@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.horf.derp.testproject" >
+    package="edu.unh.cs.cs619_2014_project2.g1" >
 
     <application
         android:allowBackup="true"
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GridHandler"
+            android:name=".ServerEventHandler_"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:theme="@style/FullscreenTheme" >

@@ -14,13 +14,15 @@
 
     <integer name="debug">1</integer>
 
-    <integer name="left">1</integer>
-    <integer name="up">2</integer>
-    <integer name="down">3</integer>
-    <integer name="right">4</integer>
+    <integer name="left">6</integer>
+    <integer name="up">0</integer>
+    <integer name="down">4</integer>
+    <integer name="right">2</integer>
 
     <integer name="player">1</integer>
     <integer name="enemy">2</integer>
+    <integer name="wall_indestructible">1</integer>
+    <integer name="wall_normal">1</integer>
 
     <integer name="state_dead">2</integer>
     <integer name="state_alive">1</integer>

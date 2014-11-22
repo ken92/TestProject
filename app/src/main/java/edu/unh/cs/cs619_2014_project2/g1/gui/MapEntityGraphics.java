@@ -1,0 +1,17 @@
+package edu.unh.cs.cs619_2014_project2.g1.gui;
+
+import android.graphics.Canvas;
+
+/**
+ * Created by Eridan on 10/31/2014.
+ */
+public interface MapEntityGraphics {
+    public void draw(Canvas canvas, int x, int y);
+    public void setImage(int path);
+    public void setDimensions(int width, int height);
+    /*public void setCoordinates(int x, int y);
+    public void setX(int x);
+    public void setY(int y);
+    public int getX();
+    public int getY();*/
+}

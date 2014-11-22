@@ -1,3 +1,5 @@
+// build.gradle
+
 buildscript {
     repositories {
         mavenCentral()
@@ -17,16 +19,18 @@ repositories {
 }
 
 apply plugin: 'com.android.application'
+
+apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 
 android {
-    compileSdkVersion 20
+    compileSdkVersion 21
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "com.horf.derp.testproject"
-        minSdkVersion 16
-        targetSdkVersion 20
+        applicationId "edu.unh.cs.cs619_2014_project2.g1"
+        minSdkVersion 11
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
@@ -36,7 +40,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE'
@@ -51,9 +54,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-v4:20.0.0'
 
     apt 'org.androidannotations:androidannotations:3.1'
+    compile 'com.android.support:appcompat-v7:21.0.0'
     compile 'org.androidannotations:androidannotations-api:3.1'
     compile 'org.springframework.android:spring-android-rest-template:1.0.1.RELEASE'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.3.2'
