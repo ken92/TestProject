@@ -1,4 +1,4 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.server;
 
 /**
  * Created by Eridan on 11/13/2014.

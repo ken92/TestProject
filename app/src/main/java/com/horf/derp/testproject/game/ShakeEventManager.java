@@ -1,4 +1,4 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.game;
 
 import android.content.Context;
 import android.hardware.Sensor;

@@ -1,7 +1,9 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.gui;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+
+import com.horf.derp.testproject.R;
 
 /**
  * Created by Eridan on 11/1/2014.

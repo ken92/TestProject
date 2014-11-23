@@ -1,24 +1,32 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.game;
 
+import android.content.Context;
 import android.graphics.Canvas;
+
+import com.horf.derp.testproject.gui.MapEntityGraphics;
+import com.horf.derp.testproject.R;
 
 /**
  * Created by Eridan on 11/15/2014.
  */
 public class ConcreteMapEntityLogic implements MapEntityLogic {
-    private static final int UP=R.integer.up;
-    private static final int DOWN=R.integer.down;
-    private static final int LEFT=R.integer.left;
-    private static final int RIGHT=R.integer.right;
+    private static int UP;
+    private static int DOWN;
+    private static int LEFT;
+    private static int RIGHT;
 
     private MapEntityGraphics graphics;
     private int x, y;
     private int direction=UP;
 
-    public ConcreteMapEntityLogic(int x, int y, MapEntityGraphics graphics) {
+    public ConcreteMapEntityLogic(int x, int y, MapEntityGraphics graphics, Context context) {
         setX(x);
         setY(y);
         this.graphics=graphics;
+        UP=context.getResources().getInteger(R.integer.up);
+        LEFT=context.getResources().getInteger(R.integer.left);
+        DOWN=context.getResources().getInteger(R.integer.down);
+        RIGHT=context.getResources().getInteger(R.integer.right);
     }
 
     @Override

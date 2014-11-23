@@ -31,7 +31,7 @@ public class GUITest extends Activity {
             //updateTankId();
             //poller.doPoll();
             //poller.pollOnce();
-            Intent intent = new Intent(this, ServerEventHandler_.class);
+            Intent intent = new Intent(this, ServerEventHandler.class);
             startActivity(intent);
         } catch (Exception e){
             e.printStackTrace();

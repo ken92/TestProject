@@ -1,4 +1,4 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.server;
 
 import com.google.common.eventbus.EventBus;
 

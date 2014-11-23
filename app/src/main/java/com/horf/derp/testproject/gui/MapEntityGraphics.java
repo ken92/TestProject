@@ -1,4 +1,4 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.gui;
 
 import android.graphics.Canvas;
 

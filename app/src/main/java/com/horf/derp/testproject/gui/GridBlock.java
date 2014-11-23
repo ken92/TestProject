@@ -1,8 +1,10 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.gui;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+
+import com.horf.derp.testproject.game.MapEntityLogic;
 
 /**
  * Created by Eridan on 10/31/2014.
@@ -17,7 +19,7 @@ public class GridBlock {
     private int blockNumber=-1;
     private int gridPositionX, gridPositionY;
 
-    private int debug = 1;
+    private int debug = 0;
 
     public GridBlock(int thisX, int thisY, int thisWidth, int thisHeight, int gridPositionX, int gridPositionY) {
         x=thisX;

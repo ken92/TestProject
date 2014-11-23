@@ -4,47 +4,53 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.Window;
 import android.widget.Toast;
 
-import com.google.common.eventbus.Subscribe;
-
-import org.androidannotations.annotations.Background;
-import org.androidannotations.annotations.Bean;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.UiThread;
-import org.androidannotations.annotations.rest.RestService;
+import com.horf.derp.testproject.game.ShakeEventManager;
+import com.horf.derp.testproject.gui.GridHandler;
 
 /**
  * Created by Eridan on 11/20/2014.
  */
-@EActivity(R.layout.activity_servereventhandler)
-public class ServerEventHandler extends Activity implements ShakeEventManager.ShakeListener {
+//@EActivity(R.layout.activity_servereventhandler)
+public class ServerEventHandler extends Activity {//implements ShakeEventManager.ShakeListener {
     private static final String LOG_TAG="ServerEventHandler";
-    private static final int UP=R.integer.up;
-    private static final int DOWN=R.integer.down;
-    private static final int LEFT=R.integer.left;
-    private static final int RIGHT=R.integer.right;
+    private static int UP;
+    private static int DOWN;
+    private static int LEFT;
+    private static int RIGHT;
 
     private GridHandler gridHandler;
     private ShakeEventManager shakeEventManager;
 
     long tankId = -1;
-    @RestService
+    /*@RestService
     BulletZoneRestClient restClient;
     @Bean
-    Poller poller;
+    Poller poller;*/
 
     float x1, x2, y1, y2;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        UP=this.getResources().getInteger(R.integer.up);
+        DOWN=this.getResources().getInteger(R.integer.down);
+        LEFT=this.getResources().getInteger(R.integer.left);
+        RIGHT=this.getResources().getInteger(R.integer.right);
+
         gridHandler = new GridHandler(this);
         setContentView(gridHandler.getCanvas());
 
         shakeEventManager = new ShakeEventManager();
-        shakeEventManager.setListener(this);
+        //shakeEventManager.setListener(this);
         shakeEventManager.init(this);
+
+        //gridHandler.createTestSQLData();
+        gridHandler.restoreTime(0);
     }
 
     @Override
@@ -52,14 +58,14 @@ public class ServerEventHandler extends Activity implements ShakeEventManager.Sh
         super.onPause();
         Log.i(LOG_TAG, "onPause");
         shakeEventManager.deregister();
-        BusProvider.getInstance().unregister(eventHandler);
+       //BusProvider.getInstance().unregister(eventHandler);
     }
     @Override
     protected void onResume() {
         super.onResume();
         Log.i(LOG_TAG, "onResume");
         shakeEventManager.register();
-        BusProvider.getInstance().register(eventHandler);
+        //BusProvider.getInstance().register(eventHandler);
     }
 
 
@@ -114,7 +120,7 @@ public class ServerEventHandler extends Activity implements ShakeEventManager.Sh
         return false;
     }
 
-    @Background
+    /*@Background
     @Override
     public void onShake() {
     //    Toast.makeText(this, "BANG!", Toast.LENGTH_SHORT).show();
@@ -150,7 +156,7 @@ public class ServerEventHandler extends Activity implements ShakeEventManager.Sh
         } catch (Exception e){
             e.printStackTrace();
         }
-    }
+    }*/
 
 
 

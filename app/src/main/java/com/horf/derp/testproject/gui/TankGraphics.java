@@ -1,19 +1,22 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.gui;
 
 import android.content.Context;
 import android.util.Log;
+
+import com.horf.derp.testproject.R;
+import com.horf.derp.testproject.gui.ConcreteMapEntityGraphics;
 
 
 /**
  * Created by Eridan on 11/14/2014.
  */
 public class TankGraphics extends ConcreteMapEntityGraphics {
-    public final static int UP=R.integer.up;
-    public final static int LEFT=R.integer.left;
-    public final static int RIGHT=R.integer.right;
-    public final static int DOWN=R.integer.down;
-    public final static int PLAYER=R.integer.player;
-    public final static int ENEMY=R.integer.enemy;
+    public static int UP;
+    public static int LEFT;
+    public static int RIGHT;
+    public static int DOWN;
+    public static int PLAYER;
+    public static int ENEMY;
 
     private int direction=UP;
     private static int imageUp;
@@ -21,15 +24,27 @@ public class TankGraphics extends ConcreteMapEntityGraphics {
     private static int imageLeft;
     private static int imageRight;
 
+    private int playerOrEnemy;
+
     private final static String LOG_TAG="TankGraphics";
 
     public TankGraphics(Context context, int playerOrEnemy) {
         super(context);
+        setDirections(context);
         setPlayerOrEnemy(playerOrEnemy);
     }
     public TankGraphics(Context context, int playerOrEnemy, int width, int height) {
         super(context, width, height);
+        setDirections(context);
         setPlayerOrEnemy(playerOrEnemy);
+    }
+    private void setDirections(Context context) {
+        UP=context.getResources().getInteger(R.integer.up);
+        LEFT=context.getResources().getInteger(R.integer.left);
+        DOWN=context.getResources().getInteger(R.integer.down);
+        RIGHT=context.getResources().getInteger(R.integer.right);
+        PLAYER=context.getResources().getInteger(R.integer.player);
+        ENEMY=context.getResources().getInteger(R.integer.enemy);
     }
     private void setPlayerOrEnemy(int playerOrEnemy) {
         if(playerOrEnemy==PLAYER) {
@@ -39,35 +54,35 @@ public class TankGraphics extends ConcreteMapEntityGraphics {
             imageRight=R.drawable.playertankright;
         }
         else {
+            Log.d(LOG_TAG, "playerOrEnemy: "+playerOrEnemy);
             imageUp=R.drawable.enemytankup;
             imageDown=R.drawable.enemytankdown;
             imageLeft=R.drawable.enemytankleft;
             imageRight=R.drawable.enemytankright;
         }
         setImage(imageUp);
+        this.playerOrEnemy=playerOrEnemy;
     }
+    public int getPlayerOrEnemy() {return playerOrEnemy;}
 
     public int getDirection() { return direction; }
 
     public void setDirection(int direction) {
-        switch (direction) {
-            case UP:
-                setImage(imageUp);
-                this.direction=UP;
-                break;
-            case DOWN:
-                setImage(imageDown);
-                this.direction=DOWN;
-                break;
-            case LEFT:
-                setImage(imageLeft);
-                this.direction=LEFT;
-                break;
-            case RIGHT:
-                setImage(imageRight);
-                this.direction=RIGHT;
-                break;
-            default: return;
+        if(direction==UP) {
+            setImage(imageUp);
+            this.direction=UP;
+        }
+        else if(direction==DOWN) {
+            setImage(imageDown);
+            this.direction=DOWN;
+        }
+        else if(direction==LEFT) {
+            setImage(imageLeft);
+            this.direction=LEFT;
+        }
+        else if(direction==RIGHT) {
+            setImage(imageRight);
+            this.direction=RIGHT;
         }
     }
 

@@ -8,9 +8,9 @@
     <integer name="grid_width">16</integer>
     <integer name="grid_height">16</integer>
 
-    <color name="grid_block_colour">#FE2EF7</color>
+    <color name="grid_block_colour">#0066FF</color>
     <integer name="grid_block_stroke">10</integer>
-    <color name="grid_block_line_colour">#CC66FF</color>
+    <color name="grid_block_line_colour">#99CCFF</color>
 
     <integer name="debug">1</integer>
 
@@ -28,4 +28,15 @@
     <integer name="state_alive">1</integer>
 
     <integer name="default_tank_hp">100</integer>
+    <integer name="default_tank_height">80</integer>
+    <integer name="default_tank_width">80</integer>
+    <integer name="default_bullet_height">50</integer>
+    <integer name="default_bullet_width">50</integer>
+    <integer name="default_wall_height">100</integer>
+    <integer name="default_wall_width">100</integer>
+
+    <integer name="replay_states">5</integer>
+
+    <integer name="database_version">1</integer>
+    <string name="database_name">replay</string>
 </resources>

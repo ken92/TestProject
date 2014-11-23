@@ -1,6 +1,8 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.gui;
 
 import android.content.Context;
+
+import com.horf.derp.testproject.gui.ConcreteMapEntityGraphics;
 
 /**
  * Created by Eridan on 11/15/2014.

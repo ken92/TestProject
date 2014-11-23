@@ -1,4 +1,4 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.server;
 
 /**
  * Created by sji363 on 11/12/14.
@@ -10,6 +10,7 @@ package com.horf.derp.testproject;
  * for both classes.
  *
  */
+
 import org.androidannotations.annotations.rest.Delete;
 import org.androidannotations.annotations.rest.Get;
 import org.androidannotations.annotations.rest.Post;

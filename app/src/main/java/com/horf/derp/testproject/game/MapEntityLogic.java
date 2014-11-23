@@ -1,6 +1,8 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.game;
 
 import android.graphics.Canvas;
+
+import com.horf.derp.testproject.gui.MapEntityGraphics;
 
 /**
  * Created by Eridan on 11/15/2014.

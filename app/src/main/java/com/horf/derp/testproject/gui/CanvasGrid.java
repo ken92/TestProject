@@ -1,10 +1,12 @@
-package com.horf.derp.testproject;
+package com.horf.derp.testproject.gui;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import com.horf.derp.testproject.R;
 
 /**
  * Created by Eridan on 10/31/2014.
@@ -141,5 +143,13 @@ public class CanvasGrid extends SurfaceView {
     public void moveObjectRight(int x, int y) {
         if(theGrid[x][y].getObject()==null || x+1<=gridWidth) return;
         moveEntityAt(x, y, x+1, y);
+    }
+
+    public void clearGrid() {
+        for(int i=0; i<gridWidth; i++) {
+            for(int j=0; j<gridHeight; j++) {
+                theGrid[i][j].clearObject();
+            }
+        }
     }
 }
